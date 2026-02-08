@@ -1,0 +1,12 @@
+# Compiled files
+*.exe
+*.out
+*.o
+*.obj
+
+# VS Code settings
+.vscode/
+
+# Optional extras
+*.log
+*.tmp
