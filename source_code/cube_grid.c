@@ -42,3 +42,11 @@ void getValue(int a[9][9][3], int i, int j, int k, int value) {
         return -1;
     }
 }
+
+void IscellEmpty( int a[9][9][3],int i, int j, int k ){
+    if (a[9][9][3] = 0){
+        return 1;
+    }else{
+        return 0;
+    } 
+}
