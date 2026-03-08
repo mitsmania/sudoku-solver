@@ -10,3 +10,18 @@ void initialize(){
        }
     }
 }
+
+void printmatrix(){
+    int i, j, k;
+    for(k=1; k<=3; k++){
+        printf("layer: %d", k);
+
+        for(i=1; i<=9; i++){
+            for(j=1; j<=9; j++){
+                printf("%d", a[i][j][k]);
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+}
