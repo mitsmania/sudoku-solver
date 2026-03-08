@@ -33,3 +33,12 @@ void setvalue(int a[9][9][3], int i, int j, int k, int value){
         printf("invalid coordinates\n");
     }
 }
+
+void getValue(int a[9][9][3], int i, int j, int k, int value) {
+    if(i >= 1 && i <=9 && j >= 1 && j <=9 && k >= 1 && k <=3) {
+        return a[i][j][k];
+    } else {
+        printf("Invalid coordinates\n");
+        return -1;
+    }
+}
