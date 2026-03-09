@@ -38,5 +38,16 @@ int checkBox (int layer, int row, int col, int num){
 }
 
 
+int checkEmpty (int layer, int row, int col){
+    
+    if (matrix[row][col][layer]==0){
+        return 1;
+    }
+    return 0;
+}
+
+
+
+
 
 
