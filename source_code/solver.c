@@ -22,6 +22,21 @@ int checkCol(int layer, int col, int num){
 }
 
 
+int checkBox (int layer, int row, int col, int num){
+    
+    int startRow = (row/3)*3;
+    int startCol = (col/3)*3;
+    
+    for (int r=startRow; r<startRow + 3; r++){
+        for (int c =startCol; c<startCol + 3; c++){
+            if (matrix[r][c][layer]== num){
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
 
 
 
