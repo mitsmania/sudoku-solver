@@ -18,11 +18,11 @@ void initMatrix(){
 
 void printMatrix(){
     for(int layer=0; layer<3; layer++){
-        printf("layer: %d\n", layer);
+        printf("layer: %d\n", layer+1);
 
         for(int row=0; row<9; row++){
             for(int col=0; col<9; col++){
-                printf("%d", matrix[row][col][layer]);
+                printf("%d ", matrix[row][col][layer]);
             }
             printf("\n");
         }
