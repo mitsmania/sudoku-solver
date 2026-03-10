@@ -50,7 +50,7 @@ int getValue( int row, int col, int layer) {
         return matrix[row][col][layer];
     } else {
         printf("Invalid coordinates\n");
-        return -1;
+        return 0;
     }
 }
 
