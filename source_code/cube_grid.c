@@ -34,7 +34,7 @@ void printMatrix(){
 
 
 
-void setValue(int matrix[9][9][3], int row, int col, int layer, int value){
+void setValue( int row, int col, int layer, int value){
     if(row>=0 && row<=8 && col>=0 && col<=8 && layer>=0 && layer<=2){
         matrix[row][col][layer] = value;
     }else{
@@ -45,7 +45,7 @@ void setValue(int matrix[9][9][3], int row, int col, int layer, int value){
 
 
 
-void getValue(int a[9][9][3], int i, int j, int k, int value) {
+void getValue(int i, int j, int k, int value) {
     if(i >= 1 && i <=9 && j >= 1 && j <=9 && k >= 1 && k <=3) {
         return a[i][j][k];
     } else {
@@ -54,8 +54,8 @@ void getValue(int a[9][9][3], int i, int j, int k, int value) {
     }
 }
 
-void IscellEmpty( int a[9][9][3],int i, int j, int k ){
-    if (a[9][9][3] = 0){
+int isCellEmpty(int row, int col, int layer ){
+    if (matrix[row][col][layer] == 0){
         return 1;
     }else{
         return 0;
