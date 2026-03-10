@@ -34,11 +34,11 @@ void printMatrix(){
 
 
 
-void setvalue(int a[9][9][3], int i, int j, int k, int value){
-    if(i>=1 && i<=9 && j>=1 && j<=9 && k>=1 && k<=3){
-        a[i][j][k] = value;
+void setValue(int matrix[9][9][3], int row, int col, int layer, int value){
+    if(row>=0 && row<=8 && col>=0 && col<=8 && layer>=0 && layer<=2){
+        matrix[row][col][layer] = value;
     }else{
-        printf("invalid coordinates\n");
+        printf("Invalid coordinates\n");
     }
 }
 
