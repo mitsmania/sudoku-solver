@@ -38,14 +38,6 @@ int checkBox (int layer, int row, int col, int num){
 }
 
 
-int checkEmptyCell (int layer, int row, int col){
-    
-    if (matrix[row][col][layer]==0){
-        return 1;
-    }
-    return 0;
-}
-
 
 int checkEmptyMatrix (){
     for (int l=0; l<3; l++){
@@ -61,7 +53,21 @@ int checkEmptyMatrix (){
 }
 
 
-
+int checkEmptyCell(int *row, int *col, int *layer){
+    for (int l=0; l<3; l++){
+    for (int r=0; r<9; r++){
+        for (int c=0; c<9; c++){
+            if(matrix[r][c][l]==0){
+                *layer = l;
+                *row = r;
+                *col = c;
+                return 1;
+            }
+        }
+    }
+}
+return 0;
+}
 
 
 
