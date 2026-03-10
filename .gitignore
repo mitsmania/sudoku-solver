@@ -10,3 +10,9 @@
 # Optional extras
 *.log
 *.tmp
+
+# Code Runner temp files
+tempCodeRunnerFile.c
+*/tempCodeRunnerFile.c
+CodeRunnerFile.c
+CodeRunnerFile.exe
