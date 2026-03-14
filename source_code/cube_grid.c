@@ -1,5 +1,5 @@
 #include<stdio.h>
-int SIZE;
+int SIZE = 9;
 
 int grid[9][9];
 
