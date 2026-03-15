@@ -20,7 +20,13 @@ void readCages(struct Cage cages[], int cage_count)
         printf("Enter number of cells: ");
         scanf("%d", &cages[i].cell_count);
 
-       
+        for(int j = 0; j < cages[i].cell_count; j++)
+        {
+            printf("Enter row and column: ");
+            scanf("%d %d",
+                  &cages[i].cells[j].row,
+                  &cages[i].cells[j].col);
+        }
     }
 }
 
