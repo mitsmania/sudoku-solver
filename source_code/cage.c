@@ -8,6 +8,7 @@ struct Cage{
     int cell_count;
     struct Cell cells[9];
 };
+
 void readCages(struct Cage cages[], int cage_count)
 {
     for(int i = 0; i < cage_count; i++)
@@ -29,4 +30,15 @@ void readCages(struct Cage cages[], int cage_count)
         }
     }
 }
+int main()
+{
+    struct Cage cages[50];
+    int cage_count;
 
+    printf("Enter number of cages: ");
+    scanf("%d", &cage_count);
+
+    readCages(cages, cage_count);
+
+    return 0;
+}
