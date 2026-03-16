@@ -22,15 +22,3 @@ void readCages(struct Cage cages[], int cage_count)
         }
     }
 }
-int main()
-{
-    struct Cage cages[50];
-    int cage_count;
-
-    printf("Enter number of cages: ");
-    scanf("%d", &cage_count);
-
-    readCages(cages, cage_count);
-
-    return 0;
-}
