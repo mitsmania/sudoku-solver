@@ -1,7 +1,5 @@
 #include<stdio.h>
-int SIZE = 9;
-
-int grid[9][9];
+#include "grid.h"
 
 void initalizeGrid(int grid[SIZE][SIZE])
 {
