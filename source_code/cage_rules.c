@@ -23,3 +23,9 @@ int checkCage(int grid[SIZE][SIZE], struct Cage *c){
     return 1;
 
 }
+int checkAllCages(int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
+    for (int i=0; i<cage_count;i++){
+        if(!checkCage(grid, &cages[i])) return 0;
+    }
+    return 1;
+}
