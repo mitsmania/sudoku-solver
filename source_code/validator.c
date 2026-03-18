@@ -18,3 +18,12 @@ int checkCol(int grid[9][9], int col, int num)
     }
     return 1;
 }
+
+int checkBox(int grid[9][9], int row, int col, int num)
+{
+    int startRow = row - (row % 3);
+    int startCol = col - (col % 3);
+
+    
+    return 1; 
+}
