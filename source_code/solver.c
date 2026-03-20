@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include "grid.h"
+#include "validator.h"
+#include "cage_rules.h"
 
 int findEmptyCell (int grid[SIZE][SIZE], int *row, int *col){
 
@@ -13,3 +16,8 @@ for (int j=0; j<SIZE; j++){
 }
 return 0;
 }
+
+
+
+
+
