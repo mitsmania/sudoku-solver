@@ -5,7 +5,7 @@ void initalizeGrid(int grid[SIZE][SIZE])
 {
     for(int i=0;i<SIZE;i++)
         for(int j=0;j<SIZE;j++)
-            grid[9][9]=0;
+            grid[i][j]=0;
 }
 
 void setvalue(int grid[SIZE][SIZE], int row,int col,int value)
