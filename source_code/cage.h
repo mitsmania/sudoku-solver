@@ -1,7 +1,7 @@
 #ifndef CAGE_H
 #define CAGE_H
 
-#define MAX_CAGES 50
+#define MAX_CAGES 100
 
 struct Cell{
     int row;
