@@ -24,6 +24,16 @@ int main()
         scanf("%d",&cage_count);
         readCages(cages,cage_count);
     }
+    else if(choice == 2)
+    {
+        char filename[100];
+        scanf("%s",filename);
+
+        if(!parseFile(filename,grid,cages,&cage_count))
+            return 1;
+
+        if(cage_count > 100)
+            return 1;
 
     return 0;
 }
