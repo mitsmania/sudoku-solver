@@ -34,6 +34,12 @@ int main()
 
         if(cage_count > 100)
             return 1;
+    }
+    else
+        return 1;
 
+    if(solveSudoku(grid,cages,cage_count))
+        printGrid(grid);
+    
     return 0;
 }
