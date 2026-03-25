@@ -36,7 +36,10 @@ int main()
             return 1;
     }
     else
+    {
+        printf("Invalid choice\n");
         return 1;
+    }
 
     if(solveSudoku(grid,cages,cage_count))
         printGrid(grid);
