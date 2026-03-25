@@ -40,7 +40,13 @@ int main()
         printf("Invalid choice\n");
         return 1;
     }
-
+  for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            if(!used[i][j]){
+                printf("WARNING: Cell (%d,%d) not in any cage\n", i, j);
+            }
+        }
+    }
     if(solveSudoku(grid,cages,cage_count))
         printGrid(grid);
     
