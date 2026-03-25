@@ -47,6 +47,7 @@ int main()
             }
         }
     }
+    printf("\nSolving Sudoku...\n");
     if(solveSudoku(grid,cages,cage_count))
         printGrid(grid);
     
