@@ -52,4 +52,6 @@ int main()
         printGrid(grid);
     
     return 0;
-}
+} int used[9][9] = {0};
+
+    for(int i=0;i<cage_count;i++){
