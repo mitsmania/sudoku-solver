@@ -40,16 +40,29 @@ int main()
         printf("Invalid choice\n");
         return 1;
     }
+    int used[9][9] = {0};
+
+    for(int i=0;i<cage_count;i++){
+         for(int j=0;j<cages[i].cell_count;j++){
+            int r = cages[i].cells[j].row;
+            int c = cages[i].cells[j].col;
+             if(used[r][c]){
+                printf("ERROR overlap at (%d,%d)\n", r, c);
+             }
+            used[r][c] = 1;
+        }
+        }
+
   for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
             if(!used[i][j]){
                 printf("WARNING: Cell (%d,%d) not in any cage\n", i, j);
             }
-        }
-    }
+            }
+            }
     printf("\nSolving Sudoku...\n");
     if(solveSudoku(grid,cages,cage_count))
         printGrid(grid);
     
     return 0;
-}
+} 
