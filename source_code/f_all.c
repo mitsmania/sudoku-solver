@@ -45,7 +45,7 @@ int main()
     for(int i=0;i<cage_count;i++){
          for(int j=0;j<cages[i].cell_count;j++){
             int r = cages[i].cells[j].row;
-
+            int c = cages[i].cells[j].col;
 
   for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
