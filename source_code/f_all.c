@@ -40,6 +40,11 @@ int main()
         printf("Invalid choice\n");
         return 1;
     }
+    int used[9][9] = {0};
+
+    for(int i=0;i<cage_count;i++){
+
+
   for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
             if(!used[i][j]){
@@ -52,6 +57,4 @@ int main()
         printGrid(grid);
     
     return 0;
-} int used[9][9] = {0};
-
-    for(int i=0;i<cage_count;i++){
+} 
