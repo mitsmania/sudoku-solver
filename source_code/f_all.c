@@ -48,7 +48,7 @@ int main()
             int c = cages[i].cells[j].col;
              if(used[r][c]){
                 printf("ERROR overlap at (%d,%d)\n", r, c);
-            }
+             }
             used[r][c] = 1;
         }
         }
