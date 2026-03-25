@@ -43,6 +43,8 @@ int main()
     int used[9][9] = {0};
 
     for(int i=0;i<cage_count;i++){
+         for(int j=0;j<cages[i].cell_count;j++){
+            int r = cages[i].cells[j].row;
 
 
   for(int i=0;i<9;i++){
