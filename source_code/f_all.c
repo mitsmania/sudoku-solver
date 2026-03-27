@@ -62,7 +62,13 @@ int main()
             }
     printf("\nSolving Sudoku...\n");
     if(solveSudoku(grid,cages,cage_count))
+    {printf("\nSolved Sudoku:\n");
         printGrid(grid);
+    }
+    else
+    {
+        printf("No solution found\n");
+    }
     
     return 0;
 } 
