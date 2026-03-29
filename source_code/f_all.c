@@ -35,6 +35,7 @@ printf("Enter Sudoku grid (9x9) (0 for empty): \n");
     else if(choice == 2)
     {
         char filename[100];
+        printf("Enter file name:");
         scanf("%s",filename);
 
         if(!parseFile(filename,grid,cages,&cage_count)) {
