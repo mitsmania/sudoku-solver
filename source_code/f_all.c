@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "grid.h"
 #include "cage.h"
 #include "solver.h"
@@ -13,15 +13,23 @@ int main()
     initalizeGrid(grid);
 
     int choice;
+     printf("1. Manual Input\n");
+    printf("2. File Input\n");
+    printf("Enter choice: ");
     scanf("%d",&choice);
 
     if(choice == 1)
     {
+printf("Enter Sudoku grid (9x9) (0 for empty): \n");
+        
         for(int i=0;i<SIZE;i++)
         for(int j=0;j<SIZE;j++)
          scanf("%d",&grid[i][j]);
+        
+        printf("Enter number of cages: ");
 
         scanf("%d",&cage_count);
+        
         readCages(cages,cage_count);
     }
     else if(choice == 2)
@@ -29,11 +37,18 @@ int main()
         char filename[100];
         scanf("%s",filename);
 
-        if(!parseFile(filename,grid,cages,&cage_count))
+        if(!parseFile(filename,grid,cages,&cage_count)) {
+            printf("Error reading file\n");
             return 1;
+        }
 
-        if(cage_count > 100)
+        printf("Parse successfully\n");
+        printf("Cages read: %d\n", cage_count);
+
+        if(cage_count > 100){
+            printf("Too many cages!\n");
             return 1;
+        }
     }
     else
     {
