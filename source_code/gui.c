@@ -35,4 +35,17 @@ int main() {
 
     int solution[GRID_SIZE][GRID_SIZE] = {0};
 
-   
+    bool isDrawing = false;
+    bool strokeModeAdd = true;
+    int lastRow = -1, lastCol = -1;
+
+    bool enteringSum = false;
+    char sumInput[10] = "";
+    int inputLen = 0;
+
+    bool solved = false;
+    bool unsolvable = false;
+
+    // Edit mode for cage
+    bool editingCage = false;
+    int editingIndex = -1;
