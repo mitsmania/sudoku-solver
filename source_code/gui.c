@@ -23,3 +23,16 @@ typedef struct {
     Color color;      
 } GUICage;
 
+int main() {
+    InitWindow(700, 700, "Killer Sudoku - Cage Builder");
+    SetTargetFPS(60);
+
+    bool selected[GRID_SIZE][GRID_SIZE] = {false};
+    int cage_id[GRID_SIZE][GRID_SIZE] = {0};
+
+    GUICage guiCages[MAX_CAGES];
+    int cage_count = 0;
+
+    int solution[GRID_SIZE][GRID_SIZE] = {0};
+
+   
