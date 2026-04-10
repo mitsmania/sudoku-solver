@@ -43,3 +43,27 @@ int isValid(int grid[9][9], int row, int col, int num)
            checkCol(grid, col, num) &&
            checkBox(grid, row, col, num);
 }
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int isCageComplete (int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
+    for (int i=0; i< cage_count; i++){
+        int filled =1;
+        int sum = 0;
+    for (int j=0; j<cages[i].cell_count; j++){
+        int r = cages[i].cells[j].row;
+        int c = cages[i].cells[j].col;
+        if (grid[r][c]== 0){
+            filled = 0;
+            break;
+        }
+        sum += grid[r][c];
+    }  
+    if (filled && sum == cages[i].target){
+        return 1;
+    }
+
+}
+return 0;
+}
