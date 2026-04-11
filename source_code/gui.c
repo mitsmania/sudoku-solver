@@ -49,7 +49,7 @@ int main() {
     // Edit mode for cage
     bool editingCage = false;
     int editingIndex = -1;
- Bold 3x3 box borders
+ // Bold 3x3 box borders
         int lineWidth = 4;
         for(int i=0;i<=GRID_SIZE;i+=3){
             int x = OFFSET_X + i*CELL_SIZE;
