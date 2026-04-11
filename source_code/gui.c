@@ -49,6 +49,7 @@ int main() {
     // Edit mode for cage
     bool editingCage = false;
     int editingIndex = -1;
+<<<<<<< HEAD
  / Bold 3x3 box borders
         int lineWidth = 4;
         for(int i=0;i<=GRID_SIZE;i+=3){
@@ -112,3 +113,84 @@ int main() {
     CloseWindow();
     return 0;
 }
+=======
+// Text input for sum
+        if (enteringSum) {
+            int key = GetCharPressed();
+            while (key > 0) {
+                if ((key >= '0' && key <= '9') && inputLen < 9) {
+                    sumInput[inputLen++] = (char)key;
+                    sumInput[inputLen] = '\0';
+                }
+                key = GetCharPressed();
+            }
+
+            if (IsKeyPressed(KEY_BACKSPACE) && inputLen > 0) {
+                inputLen--;
+                sumInput[inputLen] = '\0';
+            }
+
+            // Press E to add more cells before confirming
+            if (IsKeyPressed(KEY_E) && !editingCage && cage_count < MAX_CAGES) {
+                editingCage = true;
+                editingIndex = cage_count; // new cage index
+                // sumInput is kept as is
+                enteringSum = true; // reopen prompt
+            }
+
+            // Press ENTER to finalize cage
+            if (IsKeyPressed(KEY_ENTER) && inputLen > 0) {
+
+                struct Cage newCage;
+                newCage.cell_count = 0;
+                newCage.sum = atoi(sumInput);
+
+                for (int i = 0; i < GRID_SIZE; i++) {
+                    for (int j = 0; j < GRID_SIZE; j++) {
+                        if (selected[i][j]) {
+                            newCage.cells[newCage.cell_count].row = i;
+                            newCage.cells[newCage.cell_count].col = j;
+                            newCage.cell_count++;
+                        }
+                    }
+                }
+
+                if (newCage.cell_count > 0) {
+                    if (editingCage) {
+                        guiCages[editingIndex].cage = newCage;
+                        for (int i = 0; i < newCage.cell_count; i++) {
+                            int r = newCage.cells[i].row;
+                            int c = newCage.cells[i].col;
+                            cage_id[r][c] = editingIndex + 1;
+                            selected[r][c] = false;
+                        }
+                    } else {
+                        guiCages[cage_count].cage = newCage;
+                        guiCages[cage_count].color = (Color){
+                            GetRandomValue(100,255),
+                            GetRandomValue(100,255),
+                            GetRandomValue(100,255),
+                            255
+                        };
+                        for (int i = 0; i < newCage.cell_count; i++) {
+                            int r = newCage.cells[i].row;
+                            int c = newCage.cells[i].col;
+                            cage_id[r][c] = cage_count + 1;
+                            selected[r][c] = false;
+                        }
+                        cage_count++;
+                    }
+                }
+
+                enteringSum = false;
+                editingCage = false;
+                editingIndex = -1;
+            }
+
+            if (IsKeyPressed(KEY_ESCAPE)) {
+                enteringSum = false;
+                editingCage = false;
+                editingIndex = -1;
+            }
+        }
+>>>>>>> b800ecf0682038065e37cc2deaf221b50e751576
