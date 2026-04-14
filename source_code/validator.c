@@ -44,8 +44,7 @@ int isValid(int grid[9][9], int row, int col, int num)
            checkBox(grid, row, col, num);
 }
 
-// Online C compiler to run C program online
-#include <stdio.h>
+
 
 int isCageComplete (int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
     for (int i=0; i< cage_count; i++){
