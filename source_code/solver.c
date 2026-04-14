@@ -2,6 +2,7 @@
 #include "grid.h"
 #include "validator.h"
 #include "cage_rules.h"
+#include "cage.h"
 
 int findEmptyCell (int grid[SIZE][SIZE], int *row, int *col){
 
