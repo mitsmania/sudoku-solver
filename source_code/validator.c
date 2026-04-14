@@ -43,3 +43,7 @@ int isValid(int grid[9][9], int row, int col, int num)
            checkCol(grid, col, num) &&
            checkBox(grid, row, col, num);
 }
+
+    
+
+    
