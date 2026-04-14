@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include "grid.h"
+
 
 int checkRow(int grid[9][9], int row, int num)
 {
