@@ -22,7 +22,7 @@ return 0;
 
 
 
-int solveSudoku (int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
+int solveSudoku (int grid[SIZE][SIZE], struct Cage cages[], int cage_count, int completed_cages[]){
     int row, col;
     
     if (findEmptyCell(grid, &row, &col)==0){
@@ -38,22 +38,36 @@ int solveSudoku (int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
             
             if (checkAllCages(grid, cages, cage_count)){
 
-               if (isCageComplete(grid, cages, cage_count)){
-                  printGrid(grid);
-                  printf(">>> Cage completed! Press Enter to continue...\n");
-                  while (getchar() != '\n');
-                  getchar();
-               }
+                // Check if any cage just completed
+                for (int i = 0; i < cage_count; i++){
+                    if (!completed_cages[i] && isCageCompleteByIndex(grid, cages, i)){
+                        completed_cages[i] = 1;
+                        printf("\n>>> Cage %d completed!\n", i + 1);
+                        printGrid(grid);
+                        printf(">>> Press Enter to continue...\n");
+                        while (getchar() != '\n');
+                        getchar();
+                    }
+                }
 
-                if (solveSudoku(grid, cages, cage_count)){
+                if (solveSudoku(grid, cages, cage_count, completed_cages)){
                     return 1;
                 }
             }
-           printf("Backtracking at cell (%d, %d), removing %d\n" row, col, grid[row][col]);
+           printf("Backtracking at cell (%d, %d), removing %d\n", row, col, grid[row][col]);
             grid[row][col] = 0;
         }
     }
     return 0;
+}
+
+// Wrapper function to initialize completed_cages array
+int solveSudokuWrapper(int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
+    int completed_cages[cage_count];
+    for (int i = 0; i < cage_count; i++){
+        completed_cages[i] = 0;
+    }
+    return solveSudoku(grid, cages, cage_count, completed_cages);
 } 
 
 
