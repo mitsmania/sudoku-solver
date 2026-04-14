@@ -77,7 +77,7 @@ printf("Enter Sudoku grid (9x9) (0 for empty): \n");
             }
             }
     printf("\nSolving Sudoku...\n");
-    if(solveSudoku(grid,cages,cage_count))
+    if(solveSudokuWrapper(grid,cages,cage_count))
     {printf("\nSolved Sudoku:\n");
         printGrid(grid);
     }
