@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include "grid.h"
+#include "cage.h"
+
 
 
 int checkRow(int grid[9][9], int row, int num)
