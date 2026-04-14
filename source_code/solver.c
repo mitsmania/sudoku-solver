@@ -33,6 +33,14 @@ int solveSudoku (int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
             grid[row][col] = num;
             
             if (checkAllCages(grid, cages, cage_count)){
+
+               if (isCageComplete(grid, cages, cage_count)){
+                  printGrid(grid);
+                  printf("\n");
+                  while (getchar() != '\n');
+                  getchar();
+               }
+
                 if (solveSudoku(grid, cages, cage_count)){
                     return 1;
                 }
