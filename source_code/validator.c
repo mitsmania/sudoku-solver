@@ -50,23 +50,20 @@ int isValid(int grid[9][9], int row, int col, int num)
 
 
 
-int isCageComplete (int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
-    for (int i=0; i< cage_count; i++){
-        int filled =1;
-        int sum = 0;
-    for (int j=0; j<cages[i].cell_count; j++){
-        int r = cages[i].cells[j].row;
-        int c = cages[i].cells[j].col;
+// Check if a specific cage by index is complete
+int isCageCompleteByIndex(int grid[SIZE][SIZE], struct Cage cages[], int cage_index){
+    int filled = 1;
+    int sum = 0;
+    for (int j=0; j<cages[cage_index].cell_count; j++){
+        int r = cages[cage_index].cells[j].row;
+        int c = cages[cage_index].cells[j].col;
         if (grid[r][c]== 0){
             filled = 0;
             break;
         }
         sum += grid[r][c];
     }  
-    if (filled && sum == cages[i].target){
-        return 1;
-    }
+    return (filled && sum == cages[cage_index].sum);
+}
 
-}
-return 0;
-}
+
