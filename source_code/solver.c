@@ -29,14 +29,17 @@ int solveSudoku (int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
     }
     
     for (int num =1; num<=9; num++){
+       printf("Trying %d at cell (%d, %d)\n", num, row, col);
+       
         if (isValid(grid, row, col, num)){
             grid[row][col] = num;
+           printf("Placed %d at cell (%d, %d)\n", num, row, col);
             
             if (checkAllCages(grid, cages, cage_count)){
 
                if (isCageComplete(grid, cages, cage_count)){
                   printGrid(grid);
-                  printf("\n");
+                  printf(">>> Cage completed! Press Enter to continue...\n");
                   while (getchar() != '\n');
                   getchar();
                }
@@ -45,6 +48,7 @@ int solveSudoku (int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
                     return 1;
                 }
             }
+           printf("Backtracking at cell (%d, %d), removing %d\n" row, col, grid[row][col]);
             grid[row][col] = 0;
         }
     }
