@@ -4,6 +4,6 @@
 #include "grid.h"
 #include "cage.h"
 
-int solveSudoku(int grid[SIZE][SIZE], struct Cage cages[], int cage_count);
+int solveSudokuWrapper(int grid[SIZE][SIZE], struct Cage cages[], int cage_count);
 
 #endif

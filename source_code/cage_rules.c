@@ -19,7 +19,22 @@ int checkCage(int grid[SIZE][SIZE], struct Cage *c){
         used_nums[val] = 1;
         sum += val;
     }
-    if (sum>req_sum) return 0;
+    //another condition is if the cage is filled fully but not matching the target sum.
+    int filled = 1;
+    for(int i=0;i<total_cells;i++){
+        int r = c->cells[i].row;
+        int col = c->cells[i].col;
+
+        if(grid[r][col] == 0){
+            filled = 0;
+            break;
+        }
+    }
+
+    if (sum > req_sum) return 0;
+
+    if (filled && sum != req_sum) return 0;
+    
     return 1;
 
 }
