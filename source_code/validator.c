@@ -1,8 +1,11 @@
 #include<stdio.h>
 #include "grid.h"
 #include "cage.h"
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> gui
 
 int checkRow(int grid[9][9], int row, int num)
 {
@@ -48,6 +51,7 @@ int isValid(int grid[9][9], int row, int col, int num)
            checkBox(grid, row, col, num);
 }
 
+<<<<<<< HEAD
 
 
 // Check if a specific cage by index is complete
@@ -67,3 +71,23 @@ int isCageCompleteByIndex(int grid[SIZE][SIZE], struct Cage cages[], int cage_in
 }
 
 
+=======
+int isCageCompleteByIndex(int grid[SIZE][SIZE], struct Cage cages[], int cage_index){
+    int filled = 1;
+    int sum = 0;
+
+    for (int j=0; j<cages[cage_index].cell_count; j++){
+        int r = cages[cage_index].cells[j].row;
+        int c = cages[cage_index].cells[j].col;
+
+        if (grid[r][c] == 0){
+            filled = 0;
+            break;
+        }
+
+        sum += grid[r][c];
+    }
+
+    return (filled && sum == cages[cage_index].sum);
+}
+>>>>>>> gui

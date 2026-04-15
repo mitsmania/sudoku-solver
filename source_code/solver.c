@@ -4,6 +4,7 @@
 #include "cage_rules.h"
 #include "cage.h"
 
+<<<<<<< HEAD
 int findEmptyCell (int grid[SIZE][SIZE], int *row, int *col){
 
 for (int i=0; i<SIZE; i++){
@@ -56,10 +57,21 @@ int solveSudokuInternal (int grid[SIZE][SIZE], struct Cage cages[], int cage_cou
             }
            printf("Backtracking at cell (%d, %d), removing %d\n", row, col, grid[row][col]);
             grid[row][col] = 0;
+=======
+int findEmptyCell(int grid[SIZE][SIZE], int *row, int *col){
+    for (int i=0; i<SIZE; i++){
+        for (int j=0; j<SIZE; j++){
+            if (isCellEmpty(grid, i, j)){
+                *row = i;
+                *col = j;
+                return 1;
+            }
+>>>>>>> gui
         }
     }
     return 0;
 }
+<<<<<<< HEAD
 
 // Wrapper function to initialize completed_cages array
 int solveSudokuWrapper(int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
@@ -73,10 +85,33 @@ int solveSudokuWrapper(int grid[SIZE][SIZE], struct Cage cages[], int cage_count
 
 
 
+=======
+>>>>>>> gui
 
+int solveSudokuInternal(int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
+    int row, col;
 
+    if (!findEmptyCell(grid, &row, &col)){
+        return 1;
+    }
 
+    for (int num = 1; num <= 9; num++){
+        if (isValid(grid, row, col, num)){
+            grid[row][col] = num;
 
+            if (checkAllCages(grid, cages, cage_count)){
+                if (solveSudokuInternal(grid, cages, cage_count)){
+                    return 1;
+                }
+            }
 
+            grid[row][col] = 0;
+        }
+    }
 
+    return 0;
+}
 
+int solveSudokuWrapper(int grid[SIZE][SIZE], struct Cage cages[], int cage_count){
+    return solveSudokuInternal(grid, cages, cage_count);
+}
