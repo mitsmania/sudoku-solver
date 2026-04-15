@@ -3,9 +3,11 @@
 #include "cage.h"
 #include "solver.h"
 #include "parser.h"
+extern int DEBUG_MODE;
 
 int main()
 {
+    DEBUG_MODE = 1;
     int grid[SIZE][SIZE];
     struct Cage cages[100];
     int cage_count;
