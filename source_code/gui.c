@@ -181,7 +181,7 @@ int main() {
                 for(int j=0;j<GRID_SIZE;j++)
                     solution[i][j] = 0;
 
-            solved = solveSudoku(solution, backendCages, cage_count);
+            solved = solveSudokuWrapper(solution, backendCages, cage_count);
             unsolvable = !solved;
         }
 //4th person ends
