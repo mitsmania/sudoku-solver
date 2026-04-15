@@ -7,10 +7,6 @@ int checkRow(int grid[SIZE][SIZE], int row, int num);
 int checkCol(int grid[SIZE][SIZE], int col, int num);
 int checkBox(int grid[SIZE][SIZE], int row, int col, int num);
 int isValid(int grid[SIZE][SIZE], int row, int col, int num);
-<<<<<<< HEAD
-int isCageComplete (int grid[SIZE][SIZE], struct Cage cages[], int cage_count);
-=======
->>>>>>> gui
 int isCageCompleteByIndex(int grid[SIZE][SIZE], struct Cage cages[], int cage_index);
 
 #endif

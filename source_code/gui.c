@@ -3,11 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>   // for atoi()
-<<<<<<< HEAD
-#include "grid.hr"
-=======
 #include "grid.h"
->>>>>>> gui
 #include "solver.h"
 #include "cage_rules.h"
 #include "cage.h"
@@ -53,9 +49,7 @@ int main() {
     // Edit mode for cage
     bool editingCage = false;
     int editingIndex = -1;
-<<<<<<< HEAD
-// Text input for sum
-=======
+
 //first person ends
     while (!WindowShouldClose()) {
 
@@ -98,7 +92,7 @@ int main() {
         }
 // 2nd person ends
         // Text input for sum
->>>>>>> gui
+
         if (enteringSum) {
             int key = GetCharPressed();
             while (key > 0) {
@@ -177,10 +171,6 @@ int main() {
                 editingIndex = -1;
             }
         }
-<<<<<<< HEAD
-        return 0;
-    }
-=======
 //3rd person ends
         // Solve trigger
         if (IsKeyPressed(KEY_S) && !enteringSum && !editingCage) {
@@ -284,4 +274,4 @@ int main() {
     CloseWindow();
     return 0;
 }
->>>>>>> gui
+
