@@ -7,7 +7,8 @@ extern int DEBUG_MODE;
 
 int main()
 {
-    DEBUG_MODE = 1;
+    printf("Enable debug? (1/0): ");
+    scanf("%d", &DEBUG_MODE);
     int grid[SIZE][SIZE];
     struct Cage cages[100];
     int cage_count;
