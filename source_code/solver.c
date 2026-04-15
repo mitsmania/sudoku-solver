@@ -22,7 +22,7 @@ return 0;
 
 
 
-int solveSudoku (int grid[SIZE][SIZE], struct Cage cages[], int cage_count, int completed_cages[]){
+int solveSudokuInternal (int grid[SIZE][SIZE], struct Cage cages[], int cage_count, int completed_cages[]){
     int row, col;
     
     if (findEmptyCell(grid, &row, &col)==0){
@@ -50,7 +50,7 @@ int solveSudoku (int grid[SIZE][SIZE], struct Cage cages[], int cage_count, int 
                     }
                 }
 
-                if (solveSudoku(grid, cages, cage_count, completed_cages)){
+                if (solveSudokuInternal(grid, cages, cage_count, completed_cages)){
                     return 1;
                 }
             }
@@ -67,7 +67,7 @@ int solveSudokuWrapper(int grid[SIZE][SIZE], struct Cage cages[], int cage_count
     for (int i = 0; i < cage_count; i++){
         completed_cages[i] = 0;
     }
-    return solveSudoku(grid, cages, cage_count, completed_cages);
+    return solveSudokuInternal(grid, cages, cage_count, completed_cages);
 } 
 
 
